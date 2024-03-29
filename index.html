@@ -62,13 +62,13 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("todo-form");
-        const input = document.getElementById("task-input");
-        const taskList = document.getElementById("task-list");
+        var form = document.getElementById("todo-form");
+        var input = document.getElementById("task-input");
+        var taskList = document.getElementById("task-list");
 
         form.addEventListener("submit", function (event) {
           event.preventDefault();
-          const taskText = input.value.trim();
+          var taskText = input.value.trim();
           if (taskText !== "") {
             addTask(taskText);
             input.value = "";
@@ -76,7 +76,7 @@
         });
 
         function addTask(taskText) {
-          const taskItem = document.createElement("li");
+          var taskItem = document.createElement("li");
           taskItem.classList.add("task-item");
           taskItem.innerHTML = `
                     <input type="checkbox">
@@ -85,8 +85,8 @@
                 `;
           taskList.appendChild(taskItem);
 
-          const checkbox = taskItem.querySelector('input[type="checkbox"]');
-          const deleteButton = taskItem.querySelector(".delete-btn");
+          var checkbox = taskItem.querySelector('input[type="checkbox"]');
+          var deleteButton = taskItem.querySelector(".delete-btn");
 
           checkbox.addEventListener("change", function () {
             if (checkbox.checked) {
